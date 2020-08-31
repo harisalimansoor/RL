@@ -1,0 +1,35 @@
+usage: dqn.py [-h] [--env ENV] [--train] [--lr LR] [--batch-size BATCH_SIZE]
+              [--num-iterations NUM_ITERATIONS] [--log-interval LOG_INTERVAL]
+              [--eval-interval EVAL_INTERVAL] [--save-dir SAVE_DIR]
+
+Run DQN algorithm on GYM Environment.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --env ENV             Enter name of gym environment
+  --train               Train our model.
+  --lr LR               Learning rate for the shared optimizer.
+  --batch-size BATCH_SIZE
+                        Batch Size used in Replay Buffer for dataset creation.
+  --num-iterations NUM_ITERATIONS
+                        Total number of iterations to run.
+  --log-interval LOG_INTERVAL
+                        Interval after which a log is made.
+  --eval-interval EVAL_INTERVAL
+                        Interval after which the policy is evaluated
+  --save-dir SAVE_DIR   Directory in which you desire to save the model.
+
+
+Dependancies (Best to install using conda):
+	tensorflow==2.23     (Make sure to install this version.)
+	tf_agents
+	gym
+	pyglet
+	box2d-py
+	ffmpeg
+
+Training:
+	python dqn.py --train
+
+Testing:
+	python dqn.py

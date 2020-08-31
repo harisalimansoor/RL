@@ -1,0 +1,42 @@
+usage: trpo.py [-h] [--env ENV] [--train] [--gamma GAMMA]
+               [--batch-size BATCH_SIZE] [--num-iterations NUM_ITERATIONS]
+               [--max-kl MAX_KL] [--cg-iters CG_ITERS] [--lam LAM]
+               [--cg-damping CG_DAMPING] [--vf-stepsize VF_STEPSIZE]
+               [--vf-iters VF_ITERS] [--save-dir SAVE_DIR]
+
+Run TRPO algorithm on GYM Environment.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --env ENV             Enter name of gym environment
+  --train               Train our model.
+  --gamma GAMMA         The discount value.
+  --batch-size BATCH_SIZE
+                        The number of timesteps to run per batch (horizon)
+  --num-iterations NUM_ITERATIONS
+                        Total number of iterations to run.
+  --max-kl MAX_KL       The Kullback-Leibler loss threshold
+  --cg-iters CG_ITERS   The number of iterations for the conjugate gradient
+                        calculation
+  --lam LAM             The GAE factor.
+  --cg-damping CG_DAMPING
+                        The compute gradient dampening factor
+  --vf-stepsize VF_STEPSIZE
+                        The value function stepsize
+  --vf-iters VF_ITERS   The value function’s number iterations for learning
+  --save-dir SAVE_DIR   Directory in which you desire to save the model.
+
+
+Dependancies (Best to install using conda):
+	tensorflow==1.14      (Make sure to install this version.)
+	gym
+	pyglet
+	box2d-py
+	ffmpeg
+	stable-baselines[mpi]
+
+Training:
+	python trpo.py --train
+
+Testing:
+	python trpo.py
